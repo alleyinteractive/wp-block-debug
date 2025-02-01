@@ -1,0 +1,62 @@
+{
+  "name": "wp-block-debug",
+  "license": "GPL-2.0-or-later",
+  "main": "wp-block-debug.php",
+  "engines": {
+    "node": "22",
+    "npm": "10"
+  },
+  "scripts": {
+    "build": "alley-build build",
+    "create-block": "npx @alleyinteractive/create-block@latest -n wp-block-debug",
+    "create-entry": "npx @alleyinteractive/create-entry@latest -n wp-block-debug -t wp-block-debug",
+    "create-slotfill": "npx @alleyinteractive/create-entry -s -n wp-block-debug -t wp-block-debug",
+    "precheck-types": "check-node-version --package",
+    "check-types": "tsc --noEmit",
+    "eslint:fix": "eslint --ext .jsx --ext .js --ext .ts --ext .tsx . --fix",
+    "eslint": "eslint --ext .jsx --ext .js --ext .ts --ext .tsx .",
+    "jest:watch": "jest --watch",
+    "jest": "jest --passWithNoTests",
+    "packages-update": "alley-build packages-update --dist-tag=wp-6.7",
+    "postinstall": "rm -rf node_modules/.cache/babel-loader && rm -rf node_modules/.cache/webpack",
+    "release": "npx @alleyinteractive/create-release@latest",
+    "start": "alley-build start",
+    "start:hot": "alley-build start --hot",
+    "stylelint:fix": "stylelint --fix \"**/*.scss\"",
+    "stylelint": "stylelint \"**/*.scss\" --allow-empty-input",
+    "test": "npm run check-types && npm run eslint && npm run stylelint && npm run jest"
+  },
+  "dependencies": {
+    "@alleyinteractive/block-editor-tools": "^0.11.0",
+    "@rjsf/core": "^5.24.2",
+    "@rjsf/utils": "^5.24.2",
+    "@rjsf/validator-ajv8": "^5.24.2",
+    "@wordpress/block-editor": "^14.3.15",
+    "@wordpress/blocks": "^13.8.5",
+    "@wordpress/components": "^28.8.11",
+    "@wordpress/compose": "^7.17.0",
+    "@wordpress/data": "^10.8.3",
+    "@wordpress/edit-post": "^8.8.18",
+    "@wordpress/element": "^6.17.0",
+    "@wordpress/hooks": "^4.17.0",
+    "@wordpress/i18n": "^5.8.2",
+    "@wordpress/plugins": "^7.8.11",
+    "react": "18.3.1"
+  },
+  "devDependencies": {
+    "@alleyinteractive/build-tool": "^0.1.5",
+    "@alleyinteractive/eslint-config": "^0.1.6",
+    "@alleyinteractive/stylelint-config": "^0.0.2",
+    "@alleyinteractive/tsconfig": "^0.1.1",
+    "@babel/preset-env": "^7.26.7",
+    "@types/wordpress__block-editor": "^11.5.16",
+    "@types/wordpress__compose": "^6.0.1",
+    "@wordpress/babel-preset-default": "^8.8.2",
+    "ajv": "^8.17.1",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "^5.7.3",
+    "webpack-cli": "^6.0.1"
+  }
+}
