@@ -3,9 +3,7 @@ name: Built Branch and Release
 on:
   push:
     branches:
-      - develop
       - main
-      - production
 
 permissions:
   contents: write
@@ -14,6 +12,8 @@ jobs:
   release:
     name: "Built Branch and Release"
     runs-on: ubuntu-latest
-    if: github.repository != 'alleyinteractive/wp-block-debug'
     steps:
       - uses: alleyinteractive/action-release@develop
+      - with:
+          php: 8.2
+          node: 22

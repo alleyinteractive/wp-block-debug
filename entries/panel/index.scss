@@ -1,0 +1,70 @@
+/*---
+panel entry styles.
+---
+
+@purpose
+  Styles for the panel entry point.
+
+  All style based entry points should be named 'index.scss' as
+  naming the stylesheet 'style' may conflict with the build system.
+
+  Avoid using style keyword in an entry point name, this might break your build process.
+
+  You can also bundle CSS modules by prefixing .module to the extension, e.g. style.module.scss.
+  Otherwise, these files are handled like all other style.scss.
+  They will also be extracted into style-index.css.
+
+  https://developer.wordpress.org/block-editor/reference-guides/packages/packages-scripts/#using-css
+
+*/
+
+.wp-block-debug__markup {
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.wp-block-debug__modal {
+  pre {
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+}
+
+.wp-block-debug__form {
+  font-family: monospace;
+
+  legend {
+    font-weight: bold;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--wp--preset--spacing--20);
+  }
+
+  // Via https://rjsf-team.github.io/react-jsonschema-form/docs/advanced-customization/internals/#custom-array-field-buttons.
+  i.glyphicon {
+    display: none;
+  }
+
+  .btn-add::after {
+    content: 'Add';
+  }
+
+  .array-item-copy::after {
+    content: 'Copy';
+  }
+
+  .array-item-move-up::after {
+    content: 'Move Up';
+  }
+
+  .array-item-move-down::after {
+    content: 'Move Down';
+  }
+
+  .array-item-remove::after {
+    content: 'Remove';
+  }
+}
