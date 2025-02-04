@@ -1,0 +1,41 @@
+<?php return array(
+    'root' => array(
+        'name' => 'alleyinteractive/wp-block-debug',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '4b0f07e0cb679503688cc1c414ec47c73cd24588',
+        'type' => 'wordpress-plugin',
+        'install_path' => __DIR__ . '/../../',
+        'aliases' => array(),
+        'dev' => false,
+    ),
+    'versions' => array(
+        'alleyinteractive/composer-wordpress-autoloader' => array(
+            'pretty_version' => 'v1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '30acf9e3498a84af478e316ae3869fa362835695',
+            'type' => 'composer-plugin',
+            'install_path' => __DIR__ . '/../alleyinteractive/composer-wordpress-autoloader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'alleyinteractive/wordpress-autoloader' => array(
+            'pretty_version' => 'v1.1.1',
+            'version' => '1.1.1.0',
+            'reference' => 'c7599d95f49f1cdc38fad19944a50b19ec0dd6ca',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../alleyinteractive/wordpress-autoloader',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'alleyinteractive/wp-block-debug' => array(
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '4b0f07e0cb679503688cc1c414ec47c73cd24588',
+            'type' => 'wordpress-plugin',
+            'install_path' => __DIR__ . '/../../',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+    ),
+);

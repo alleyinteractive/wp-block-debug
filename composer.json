@@ -10,16 +10,6 @@
     }
   ],
   "homepage": "https://github.com/alleyinteractive/wp-block-debug",
-  "require": {
-    "php": "^8.2",
-    "alleyinteractive/composer-wordpress-autoloader": "^1.0"
-  },
-  "require-dev": {
-    "alleyinteractive/alley-coding-standards": "^2.0",
-    "ergebnis/composer-normalize": "^2.45",
-    "mantle-framework/testkit": "^1.4",
-    "szepeviktor/phpstan-wordpress": "^2.0"
-  },
   "minimum-stability": "dev",
   "prefer-stable": true,
   "autoload-dev": {
