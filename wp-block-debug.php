@@ -3,7 +3,7 @@
  * Plugin Name: Alley Block Debug
  * Plugin URI: https://github.com/alleyinteractive/wp-block-debug
  * Description: Block debug panel.
- * Version: 0.1.0
+ * Version: 0.0.0
  * Author: Alley
  * Author URI: https://github.com/alleyinteractive/wp-block-debug
  * Requires at least: 6.7
