@@ -6,9 +6,17 @@ This plugin adds a panel to the WordPress block editor that allows you to inspec
 - Copy the block client ID
 - View the block object (from `select('core/block-editor').getBlock()`)
 - View the block type object
-- View the output of `useBlockProps()` for the block
+- View the output of `useBlockProps()`
 - View and copy the serialized block HTML
 - View and edit most block attributes (see the "Editing Attributes" section below)
+
+## Installation
+
+You can install the plugin via Composer:
+
+```bash
+composer require alleyinteractive/wp-block-debug
+```
 
 ## Editing Attributes
 
