@@ -15,15 +15,24 @@
 /**
  * Register the panel entry point assets so that they can be enqueued.
  */
-function wp_block_debug_register_panel_scripts() {
+function wp_block_debug_register_panel_scripts(): void {
 	// Automatically load dependencies and version.
 	$asset_file = include __DIR__ . '/index.asset.php';
+
+	if (
+		! is_array( $asset_file )
+		|| ! isset( $asset_file['dependencies'], $asset_file['version'] )
+		|| ! is_array( $asset_file['dependencies'] )
+		|| ! is_string( $asset_file['version'] )
+	) {
+		return;
+	}
 
 	// Register the panel script.
 	wp_register_script(
 		'wp-block-debug-panel-js',
 		plugins_url( 'index.js', __FILE__ ),
-		$asset_file['dependencies'],
+		array_filter( $asset_file['dependencies'], 'is_string' ),
 		$asset_file['version'],
 		true
 	);
@@ -42,7 +51,7 @@ add_action( 'init', 'wp_block_debug_register_panel_scripts' );
 /**
  * Enqueue scripts for the panel entry point.
  */
-function wp_block_debug_enqueue_panel_scripts() {
+function wp_block_debug_enqueue_panel_scripts(): void {
 	wp_enqueue_script( 'wp-block-debug-panel-js' );
 }
 add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_scripts' );
@@ -50,7 +59,7 @@ add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_scripts
 /**
  * Enqueue styles for the panel entry point.
  */
-function wp_block_debug_enqueue_panel_styles() {
+function wp_block_debug_enqueue_panel_styles(): void {
 	wp_enqueue_style( 'wp-block-debug-panel-css' );
 }
 add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_styles' );
