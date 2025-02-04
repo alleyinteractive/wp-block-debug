@@ -1,0 +1,70 @@
+{
+  "name": "alleyinteractive/wp-block-debug",
+  "description": "Block debug panel.",
+  "license": "GPL-2.0-or-later",
+  "type": "wordpress-plugin",
+  "authors": [
+    {
+      "name": "Alley",
+      "email": "info@alley.com"
+    }
+  ],
+  "homepage": "https://github.com/alleyinteractive/wp-block-debug",
+  "require": {
+    "php": "^8.2",
+    "alleyinteractive/composer-wordpress-autoloader": "^1.0"
+  },
+  "require-dev": {
+    "alleyinteractive/alley-coding-standards": "^2.0",
+    "ergebnis/composer-normalize": "^2.45",
+    "mantle-framework/testkit": "^1.4",
+    "szepeviktor/phpstan-wordpress": "^2.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true,
+  "autoload-dev": {
+    "psr-4": {
+      "Alley\\WP\\Block_Debug\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "alleyinteractive/composer-wordpress-autoloader": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "pestphp/pest-plugin": true
+    },
+    "sort-packages": true
+  },
+  "extra": {
+    "composer-normalize": {
+      "indent-size": 2,
+      "indent-style": "space"
+    },
+    "wordpress-autoloader": {
+      "autoload": {
+        "Alley\\WP\\Block_Debug\\": "src"
+      }
+    }
+  },
+  "scripts": {
+    "lint": [
+      "@phpcs",
+      "@phpstan"
+    ],
+    "lint:fix": [
+      "@phpcbf"
+    ],
+    "phpcbf": "phpcbf .",
+    "phpcs": "phpcs .",
+    "phpstan": "phpstan --memory-limit=512M",
+    "phpunit": "phpunit",
+    "release": "npx @alleyinteractive/create-release@latest",
+    "test": [
+      "@phpcs",
+      "@phpstan",
+      "@phpunit"
+    ],
+    "tidy": "[ $COMPOSER_DEV_MODE -eq 0 ] || composer normalize"
+  }
+}
