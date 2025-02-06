@@ -24,6 +24,7 @@ interface EditProps extends BlockEditProps<any> {
 }
 
 // Local helpers.
+const PANEL_NAME = 'wp-block-debug';
 const toEditableProperties = (carry: any, [key, value]: [string, any]) => {
   const allowedTypes = ['string', 'number', 'integer', 'boolean', 'object', 'array', 'null'];
 
@@ -58,18 +59,18 @@ function Panel({
   clientId,
 }: EditProps) {
   // Core selectors.
-  // @ts-ignore
-  const blockInstance = useSelect((select) => select('core/block-editor').getBlock(clientId));
-  // @ts-ignore
-  const blockType = useSelect((select) => select('core/blocks').getBlockType(blockInstance.name));
+  const panelOpen = useSelect((select) => (select('core/editor') as any).isEditorPanelOpened(PANEL_NAME), []);
+  const blockInstance = useSelect((select) => (select('core/block-editor') as any).getBlock(clientId), [clientId]);
+  const blockType = useSelect((select) => (select('core/blocks') as any).getBlockType(blockInstance.name), [blockInstance.name]);
   const blockProps = useBlockProps();
   const serializedBlock = serialize(blockInstance);
 
   // Core dispatchers.
+  const { toggleEditorPanelOpened } = useDispatch('core/editor');
   const { createNotice } = useDispatch('core/notices');
 
   // Local state.
-  const [modalOpen, setModalOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [modalContent, setModalContent] = useState<string>('');
 
   // Helper values.
@@ -82,7 +83,11 @@ function Panel({
   return (
     <>
       <InspectorControls>
-        <PanelBody title={__('Debug', 'wp-block-debug')}>
+        <PanelBody
+          title={__('Debug', 'wp-block-debug')}
+          opened={panelOpen}
+          onToggle={() => toggleEditorPanelOpened(PANEL_NAME)}
+        >
           <section>
             <h3 className="screen-reader-text">{__('Copy', 'wp-block-debug')}</h3>
 
