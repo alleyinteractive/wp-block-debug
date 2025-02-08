@@ -2,8 +2,8 @@
 /**
  * Plugin Name: Alley Block Debug
  * Plugin URI: https://github.com/alleyinteractive/wp-block-debug
- * Description: Block debug panel.
- * Version: 0.2.0
+ * Description: Adds a panel to the block editor with a lot of information about the selected block, including methods to set attributes.
+ * Version: 0.3.0
  * Author: Alley
  * Author URI: https://github.com/alleyinteractive/wp-block-debug
  * Requires at least: 6.7
