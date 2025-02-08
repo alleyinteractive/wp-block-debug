@@ -14,7 +14,9 @@ use Alley\WP\Features\Quick_Feature;
  * Instantiate the plugin.
  */
 function main(): void {
-	$plugin = new Group(
+	$plugin = new Group();
+
+	$plugin->include(
 		new Quick_Feature(
 			fn () => add_filter(
 				'map_meta_cap',
