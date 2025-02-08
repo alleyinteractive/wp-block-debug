@@ -53,5 +53,7 @@ if ( ! file_exists( __DIR__ . '/vendor/wordpress-autoload.php' ) ) {
 
 // Load the plugin's main files.
 require_once __DIR__ . '/src/assets.php';
+require_once __DIR__ . '/src/main.php';
 
 load_scripts();
+main();

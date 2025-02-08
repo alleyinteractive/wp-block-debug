@@ -49,17 +49,12 @@ function wp_block_debug_register_panel_scripts(): void {
 add_action( 'init', 'wp_block_debug_register_panel_scripts' );
 
 /**
- * Enqueue scripts for the panel entry point.
+ * Enqueue assets for the panel entry point.
  */
-function wp_block_debug_enqueue_panel_scripts(): void {
-	wp_enqueue_script( 'wp-block-debug-panel-js' );
+function wp_block_debug_enqueue_panel_assets(): void {
+	if ( current_user_can( 'view_block_debug' ) ) {
+		wp_enqueue_script( 'wp-block-debug-panel-js' );
+		wp_enqueue_style( 'wp-block-debug-panel-css' );
+	}
 }
-add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_scripts' );
-
-/**
- * Enqueue styles for the panel entry point.
- */
-function wp_block_debug_enqueue_panel_styles(): void {
-	wp_enqueue_style( 'wp-block-debug-panel-css' );
-}
-add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_styles' );
+add_action( 'enqueue_block_editor_assets', 'wp_block_debug_enqueue_panel_assets' );
