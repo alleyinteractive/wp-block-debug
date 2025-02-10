@@ -1,6 +1,6 @@
 {
   "name": "alleyinteractive/wp-block-debug",
-  "description": "Block debug panel.",
+  "description": "Adds a panel to the WordPress block editor with a lot of information about the selected block, including methods to set attributes.",
   "license": "GPL-2.0-or-later",
   "type": "wordpress-plugin",
   "authors": [
@@ -12,7 +12,8 @@
   "homepage": "https://github.com/alleyinteractive/wp-block-debug",
   "require": {
     "php": "^8.2",
-    "alleyinteractive/composer-wordpress-autoloader": "^1.0"
+    "alleyinteractive/composer-wordpress-autoloader": "^1.0",
+    "alleyinteractive/wp-type-extensions": "^3.0"
   },
   "require-dev": {
     "alleyinteractive/alley-coding-standards": "^2.0",

@@ -6,6 +6,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 0.3.0
+
+### Changed
+
+- Control access to the debug panel with the `view_block_debug` capability, mapped to `edit_posts` by default.
+
 ## 0.2.0
 
 ### Changed
