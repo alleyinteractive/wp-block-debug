@@ -89,6 +89,14 @@ function Panel({
           onToggle={() => toggleEditorPanelOpened(PANEL_NAME)}
         >
           <section>
+            <h3>{__('Overview', 'wp-block-debug')}</h3>
+
+            <pre className="wp-block-debug__markup">
+              {JSON.stringify({ name, clientId }, null, 2)}
+            </pre>
+          </section>
+
+          <section>
             <h3 className="screen-reader-text">{__('Copy', 'wp-block-debug')}</h3>
 
             <ul>
