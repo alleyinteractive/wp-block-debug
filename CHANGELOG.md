@@ -6,6 +6,12 @@ This library adheres to [Semantic Versioning](https://semver.org/) and [Keep a C
 
 Nothing yet.
 
+## 0.4.0
+
+### Added
+
+- Show the block name and client ID in addition to the "Copy" buttons.
+
 ## 0.3.0
 
 ### Changed
